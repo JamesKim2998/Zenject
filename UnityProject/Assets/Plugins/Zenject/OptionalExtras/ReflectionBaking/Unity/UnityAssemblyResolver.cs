@@ -22,12 +22,12 @@ namespace Zenject.ReflectionBaking
 
             for (int i = 0; i < assemblies.Length; i++)
             {
-#if NET_4_6
+// #if NET_4_6
                 if (assemblies[i].IsDynamic)
                 {
                     continue;
                 }
-#endif
+// #endif
 
                 _appDomainAssemblyLocations[assemblies[i].FullName] = assemblies[i].Location;
 
