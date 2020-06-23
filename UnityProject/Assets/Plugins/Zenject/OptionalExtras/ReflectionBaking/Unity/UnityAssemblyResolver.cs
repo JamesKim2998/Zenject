@@ -29,6 +29,10 @@ namespace Zenject.ReflectionBaking
                 }
 // #endif
 
+                // For "Anonymously Hosted Dynamic Methods Assembly" location will be empty string.
+                if (string.IsNullOrEmpty(assemblies[i].Location))
+                    continue;
+
                 _appDomainAssemblyLocations[assemblies[i].FullName] = assemblies[i].Location;
 
                 AddSearchDirectory(Path.GetDirectoryName(assemblies[i].Location));
